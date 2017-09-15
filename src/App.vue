@@ -1,12 +1,20 @@
 <template>
-  <div>
-    <h1>{{ titulo }}</h1>
+  <div class="corpo">
+    <h1 class="centralizado">{{ titulo }}</h1>
 
-    <ul>
-      <li v-for="foto in fotos" :key="foto.url">
-        <img :src="foto.url" :alt="foto.titulo" height="30%" width="30%">
+    <ul class="lista-fotos">
+      <li class="lista-fotos-item" v-for="foto of fotos" :key="foto.url">
+        <div class="painel">
+          <h2 class="painel-titulo">{{foto.titulo}}</h2>
+          <div class="painel-corpo">
+
+            <img class="imagem-responsiva" :src="foto.url" :alt="foto.titulo">
+
+          </div><!-- fim painel-corpo -->
+        </div><!-- fim painel -->
       </li>
-    </ul> 
+    </ul>
+
   </div>
 </template>
 
@@ -28,5 +36,48 @@ export default {
 </script>
 
 <style>
+  .corpo {
+    font-family: Helvetica, sans-serif;
+    width: 96%;
+    margin: 0 auto;
+  }
 
+  .centralizado {
+    text-align: center;
+  }
+
+  .lista-fotos {
+    list-style: none;
+  }
+
+  .lista-fotos .lista-fotos-item {
+    display: inline-block;
+  }
+
+  .imagem-responsiva {
+    width: 100%;
+  }
+
+  /* estilo do painel */ 
+
+   .painel {
+    padding: 0 auto;
+    border: solid 2px grey;
+    display: inline-block;
+    margin: 5px;
+    box-shadow: 5px 5px 10px grey;
+    width: 200px;
+    height: 100%;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  .painel .painel-titulo {
+    text-align: center;
+    border: solid 2px;
+    background: lightblue;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    text-transform: uppercase;
+  }
 </style>
