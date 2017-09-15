@@ -1,60 +1,39 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+  <div>
+    <h1>{{ titulo }}</h1>
+
     <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+      <li v-for="foto in fotos" :key="foto">
+        <img :src="foto.url" :alt="foto.titulo" height="30%" width="30%">
+      </li>
+    </ul> 
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      titulo: 'Alurapic',
+      fotos: [
+        {
+          url: 'http://1.bp.blogspot.com/-tvZH8isFGzY/UKvsX4UTPlI/AAAAAAAACUs/xlqcvobMFAs/s1600/cachorros+famosos1.jpg',
+          titulo: 'Cão 1'
+        },
+        {
+          url: 'http://2.bp.blogspot.com/-qeB3PKXms5U/UKvnReGT0dI/AAAAAAAACUU/e-DOJpL6o3c/s1600/c%C3%A3es+famosos.jpg',
+          titulo: 'Cão 2'
+        },
+        {
+          url: 'http://1.bp.blogspot.com/-0JeRF9uDCV8/UKvo3-VzPGI/AAAAAAAACUc/82nTjmWlPNI/s1600/cachorros+mais+famosos.jpg',
+          titulo: 'Cão 3'
+        }
+      ]
     }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
