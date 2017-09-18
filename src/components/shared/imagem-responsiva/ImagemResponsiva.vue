@@ -6,11 +6,11 @@
 export default {
 
   props: ['url', 'titulo']
-  
+
 }
 </script>
 
-<style>
+<style scoped>
 
   .imagem-responsiva {
     width: 100%;
