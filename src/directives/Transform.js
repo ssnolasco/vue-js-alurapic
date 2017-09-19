@@ -3,12 +3,11 @@ import Vue from 'vue';
 Vue.directive('meu-transform', {
 
   bind(el, binding, vnode) {
-    console.log('diretivaaaa', el)
     let current = 0;
     el.addEventListener('dblclick', function(){
       let incremento = binding.value || 0;
 
-      let efeito; 
+      let efeito;
 
       if(!binding.arg || binding.arg == 'rotate') {
 
